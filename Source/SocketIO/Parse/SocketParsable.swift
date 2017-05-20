@@ -118,7 +118,7 @@ extension SocketParsable where Self: SocketIOClientSpec {
         if type == .error && !dataArray.hasPrefix("[") && !dataArray.hasSuffix("]") {
             dataArray = "[" + dataArray + "]"
         }
-
+        
         let data = try parseData(dataArray)
 
         return SocketPacket(type: type, data: data, id: Int(idString) ?? -1, nsp: namespace, placeholders: placeholders)
