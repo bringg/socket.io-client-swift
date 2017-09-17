@@ -36,6 +36,7 @@
 		74DA217C1F09457B009C19EE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DA21731F09440F009C19EE /* libz.tbd */; };
 		74F124F01BC574CF002966F4 /* SocketBasicPacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F124EF1BC574CF002966F4 /* SocketBasicPacketTest.swift */; };
 		74F124F11BC574CF002966F4 /* SocketBasicPacketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F124EF1BC574CF002966F4 /* SocketBasicPacketTest.swift */; };
+		7742A9591F680E7D002218B8 /* SocketObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742A9581F680E7D002218B8 /* SocketObserverDelegate.swift */; };
 		DD52B048C71D724ABBD18C71 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52BDC9E66AADA2CC5E8246 /* SocketTypes.swift */; };
 		DD52B06F898CD9164AC8F80E /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52B5A9DE10C7A8AD35617F /* SocketAnyEvent.swift */; };
 		DD52B099A5166C5FF975FAB5 /* SocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52B282975446C9A9C56D7B /* SocketClientManager.swift */; };
@@ -219,6 +220,7 @@
 		74DA21751F094417009C19EE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		74DA217D1F0945E9009C19EE /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
 		74F124EF1BC574CF002966F4 /* SocketBasicPacketTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketBasicPacketTest.swift; sourceTree = "<group>"; };
+		7742A9581F680E7D002218B8 /* SocketObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketObserverDelegate.swift; sourceTree = "<group>"; };
 		DD52B078DB0A3C3D1BB507CD /* SocketIOClientOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientOption.swift; sourceTree = "<group>"; };
 		DD52B09F7984E730513AB7E5 /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
 		DD52B1D9BC4AE46D38D827DE /* SocketIOClientStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientStatus.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				DD52B078DB0A3C3D1BB507CD /* SocketIOClientOption.swift */,
 				DD52B1D9BC4AE46D38D827DE /* SocketIOClientStatus.swift */,
 				DD52B57FFEE8560CFFD793B3 /* SocketIOClientConfiguration.swift */,
+				7742A9581F680E7D002218B8 /* SocketObserverDelegate.swift */,
 			);
 			name = Client;
 			path = Source/SocketIO/Client;
@@ -804,6 +807,7 @@
 				DD52B780FF3E646583BDC192 /* SocketEnginePollable.swift in Sources */,
 				DD52B1B2424B764C1F5B0CDF /* SocketEngineWebsocket.swift in Sources */,
 				DD52B396621157BBA175DE7E /* SocketEnginePacketType.swift in Sources */,
+				7742A9591F680E7D002218B8 /* SocketObserverDelegate.swift in Sources */,
 				DD52B319CF9D6FAE75119A58 /* SocketAckEmitter.swift in Sources */,
 				DD52BE29B55736873B00ECC4 /* SocketAckManager.swift in Sources */,
 				DD52B06F898CD9164AC8F80E /* SocketAnyEvent.swift in Sources */,

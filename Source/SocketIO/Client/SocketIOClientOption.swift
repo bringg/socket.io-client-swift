@@ -67,9 +67,15 @@ public enum SocketIOClientOption : ClientOption {
     /// Used to pass in a custom logger.
     case logger(SocketLogger)
 
+    /// If passed `true`, will cause the client to log compression events.
+    case logCompression(Bool)
+    
     /// The namespace that this client should connect to. Can be changed during use using the `joinNamespace`
     /// and `leaveNamespace` methods on `SocketIOClient`.
     case nsp(String)
+    
+    /// A custom socket observer, to log events and compression effectiveness
+    case observer(SocketObserverDelegate?)
 
     /// A custom path to socket.io. Only use this if the socket.io server is configured to look for this path.
     case path(String)
@@ -130,8 +136,12 @@ public enum SocketIOClientOption : ClientOption {
             description = "log"
         case .logger:
             description = "logger"
+        case .logCompression:
+            description = "logCompression"
         case .nsp:
             description = "nsp"
+        case .observer:
+            description = "observer"
         case .path:
             description = "path"
         case .reconnects:
@@ -181,8 +191,12 @@ public enum SocketIOClientOption : ClientOption {
             value = log
         case let .logger(logger):
             value = logger
+        case let .logCompression(shouldLog):
+            value = shouldLog
         case let .nsp(nsp):
             value = nsp
+        case let .observer(observer):
+            value = observer as Any
         case let .path(path):
             value = path
         case let .reconnects(reconnects):

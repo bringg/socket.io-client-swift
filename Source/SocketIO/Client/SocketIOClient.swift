@@ -69,7 +69,7 @@ open class SocketIOClient : NSObject, SocketIOClientSpec, SocketEngineClient, So
 
     /// The number of seconds to wait before attempting to reconnect.
     public var reconnectWait = 10
-
+    
     /// The session id of this client.
     public var sid: String? {
         return engine?.sid
@@ -156,7 +156,9 @@ open class SocketIOClient : NSObject, SocketIOClientSpec, SocketEngineClient, So
         DefaultSocketLogger.Logger.log("Adding engine", type: logType, args: "")
 
         engine?.client = nil
-        engine = SocketEngine(client: self, url: socketURL, config: config)
+        let e = SocketEngine(client: self, url: socketURL, config: config)
+        engine = e
+        
     }
 
     /// Connect to the server.

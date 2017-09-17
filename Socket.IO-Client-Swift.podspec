@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
       'SWIFT_VERSION' => '3.1'
   }
   s.source_files  = "Source/SocketIO/**/*.swift", "Source/SocketIO/*.swift"
-  s.dependency "StarscreamSocketIO", "~> 8.0.5"
+  s.dependency "StarscreamSocketIO"
 end

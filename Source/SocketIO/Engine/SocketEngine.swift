@@ -57,6 +57,12 @@ public final class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePoll
     ///
     /// **Do not touch this directly**
     public var waitingForPost = false
+    
+    // `true` if library should print compression logs.
+    public var shouldLogCompression = false
+    
+    /// Optional delegate for reporting events and compression.
+    public var observerDelegate: SocketObserverDelegate? = nil
 
     /// `true` if this engine is closed.
     public private(set) var closed = false
@@ -174,6 +180,10 @@ public final class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePoll
                 self.security = security
             case .compress:
                 self.compress = true
+            case let .logCompression(shouldLog):
+                self.shouldLogCompression = shouldLog
+            case let .observer(delegate):
+                self.observerDelegate = delegate
             default:
                 continue
             }
@@ -646,6 +656,39 @@ public final class SocketEngine : NSObject, URLSessionDelegate, SocketEnginePoll
             didError(reason: reason)
         } else {
             client?.engineDidClose(reason: "Socket Disconnected")
+        }
+    }
+    
+    public func websocketDidCompressOutgoingData(uncompressedSize: Int, compressedSize: Int) {
+        if shouldLogCompression {
+            DefaultSocketLogger.Logger.log("Socket compressed [%d -> %d] bytes", type: logType, args: uncompressedSize, compressedSize)
+        }
+        if let observer = observerDelegate {
+            observer.socketDidCompressOutgoingData(uncompressedSize: uncompressedSize, compressedSize: compressedSize)
+        }
+    }
+    public func websocketDidDecompressIncomingData(uncompressedSize: Int, compressedSize: Int) {
+        if shouldLogCompression {
+            DefaultSocketLogger.Logger.log("Socket decompressed [%d -> %d] bytes", type: logType, args: compressedSize, uncompressedSize)
+        }
+        if let observer = observerDelegate {
+            observer.socketDidDecompressIncomingData(uncompressedSize: uncompressedSize, compressedSize: compressedSize)
+        }
+    }
+    public func websocketDidNotDecompressIncomingData(size: Int) {
+        if shouldLogCompression {
+            DefaultSocketLogger.Logger.log("Socket did not decompress [%d] bytes", type: logType, args: size)
+        }
+        if let observer = observerDelegate {
+            observer.socketDidNotDecompressIncomingData(size: size)
+        }
+    }
+    public func websocketDidNotCompressOutgoingData(size: Int) {
+        if shouldLogCompression {
+            DefaultSocketLogger.Logger.log("Socket did not compress [%d ] bytes", type: logType, args: size)
+        }
+        if let observer = observerDelegate {
+            observer.socketDidNotCompressOutgoingData(size: size)
         }
     }
 }
