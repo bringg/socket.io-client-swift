@@ -11,7 +11,6 @@
 @import Foundation;
 @import XCTest;
 @import SocketIO;
-@import StarscreamSocketIO;
 
 @interface SocketObjectiveCTest : XCTestCase
 
@@ -36,6 +35,8 @@
     self.socket.nsp = @"/objective-c";
     self.socket.reconnects = false;
     self.socket.reconnectWait = 1;
+    if (self.socket.status == SocketIOClientStatusConnected) { }
+    if (self.socket.engine == NULL) { }
 }
 
 - (void)testOnSyntax {
@@ -101,7 +102,7 @@
 
 - (void)testSSLSecurity {
     SSLSecurity* sec = [[SSLSecurity alloc] initWithUsePublicKeys:0];
-    sec.isReady = 0;
+    sec = nil;
 }
 
 @end
