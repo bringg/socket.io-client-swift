@@ -45,12 +45,12 @@
 		74D0F5961F8053950037C4DC /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9432E00B1F77F883006AF628 /* Starscream.framework */; };
 		74DA21741F09440F009C19EE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DA21731F09440F009C19EE /* libz.tbd */; };
 		74DA217C1F09457B009C19EE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DA21731F09440F009C19EE /* libz.tbd */; };
-
 		9432E0071F77F7CA006AF628 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432E0061F77F7CA006AF628 /* SSLSecurity.swift */; };
 		9432E00A1F77F87D006AF628 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9432E0091F77F87D006AF628 /* Starscream.framework */; };
 		9432E00E1F77F889006AF628 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9432E00D1F77F889006AF628 /* Starscream.framework */; };
 		9432E00F1F77F8C4006AF628 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432E0061F77F7CA006AF628 /* SSLSecurity.swift */; };
 		9432E0101F77F8C4006AF628 /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432E0061F77F7CA006AF628 /* SSLSecurity.swift */; };
+		DC006B0E1FA5C918001F5D19 /* SocketObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC006B0D1FA5C918001F5D19 /* SocketObserverDelegate.swift */; };
 		DD52B048C71D724ABBD18C71 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52BDC9E66AADA2CC5E8246 /* SocketTypes.swift */; };
 		DD52B06F898CD9164AC8F80E /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52B5A9DE10C7A8AD35617F /* SocketAnyEvent.swift */; };
 		DD52B099A5166C5FF975FAB5 /* SocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52B282975446C9A9C56D7B /* SocketClientManager.swift */; };
@@ -183,12 +183,12 @@
 		74D0F58D1F804FED0037C4DC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		74DA21731F09440F009C19EE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		74DA217D1F0945E9009C19EE /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
-		74F124EF1BC574CF002966F4 /* SocketBasicPacketTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketBasicPacketTest.swift; sourceTree = "<group>"; };
 		7742A9581F680E7D002218B8 /* SocketObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketObserverDelegate.swift; sourceTree = "<group>"; };
 		9432E0061F77F7CA006AF628 /* SSLSecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLSecurity.swift; sourceTree = "<group>"; };
 		9432E0091F77F87D006AF628 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		9432E00B1F77F883006AF628 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/Mac/Starscream.framework; sourceTree = "<group>"; };
 		9432E00D1F77F889006AF628 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/tvOS/Starscream.framework; sourceTree = "<group>"; };
+		DC006B0D1FA5C918001F5D19 /* SocketObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketObserverDelegate.swift; sourceTree = "<group>"; };
 		DD52B078DB0A3C3D1BB507CD /* SocketIOClientOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientOption.swift; sourceTree = "<group>"; };
 		DD52B09F7984E730513AB7E5 /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
 		DD52B1D9BC4AE46D38D827DE /* SocketIOClientStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientStatus.swift; sourceTree = "<group>"; };
@@ -436,6 +436,7 @@
 		DD52B6A0966AF71393777311 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				DC006B0D1FA5C918001F5D19 /* SocketObserverDelegate.swift */,
 				DD52B5A9DE10C7A8AD35617F /* SocketAnyEvent.swift */,
 				DD52BA1F41F2E4B3DC20260E /* SocketIOClient.swift */,
 				DD52B6DCCBBAC6BE9C22568D /* SocketEventHandler.swift */,
@@ -739,12 +740,12 @@
 				DD52B780FF3E646583BDC192 /* SocketEnginePollable.swift in Sources */,
 				DD52B1B2424B764C1F5B0CDF /* SocketEngineWebsocket.swift in Sources */,
 				DD52B396621157BBA175DE7E /* SocketEnginePacketType.swift in Sources */,
-				7742A9591F680E7D002218B8 /* SocketObserverDelegate.swift in Sources */,
 				DD52B319CF9D6FAE75119A58 /* SocketAckEmitter.swift in Sources */,
 				DD52BE29B55736873B00ECC4 /* SocketAckManager.swift in Sources */,
 				DD52B06F898CD9164AC8F80E /* SocketAnyEvent.swift in Sources */,
 				DD52B16128003D74FC23A01F /* SocketIOClient.swift in Sources */,
 				DD52BDB51FE41BAB49073BEF /* SocketEventHandler.swift in Sources */,
+				DC006B0E1FA5C918001F5D19 /* SocketObserverDelegate.swift in Sources */,
 				9432E0071F77F7CA006AF628 /* SSLSecurity.swift in Sources */,
 				DD52BB88BD4C5641CFD2E8D4 /* SocketIOClientSpec.swift in Sources */,
 				DD52B1FEE4C81226884B1E67 /* SocketIOClientOption.swift in Sources */,
